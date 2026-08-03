@@ -1,6 +1,7 @@
 import joblib
 import pandas as pd
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from typing import Literal
 from fastapi.middleware.cors import CORSMiddleware
@@ -44,7 +45,7 @@ class PredictionResponse(BaseModel):
 
 
 
-@app.get('/')
+@app.get('/api')
 def greet():
     return {'Welcome to Mental Health Prediction API': 'Please use the /predict endpoint to get predictions.'}
 
@@ -72,3 +73,8 @@ def predict(data: StudentData):
 
    prediction = model.predict(input_row)[0] #6.77
    return PredictionResponse(predicted_mental_health_score=round(float(prediction),2))
+
+
+# Serve the frontend (index.html, style.css, script.js) from the static/ folder.
+# This MUST be the last route registered, or it will shadow /predict and /api above.
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
