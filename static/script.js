@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-const API_BASE = "https://mental-health-prediction-p1nh.onrender.com";
+const API_BASE = "https://mental-health-prediction-4hq2.onrender.com"; // change this to your backend URL if needed
 
   const form = document.getElementById("predict-form");
   const submitBtn = document.getElementById("submit-btn");
