@@ -368,7 +368,7 @@ https://www.linkedin.com/in/meet-nakrani-202092407/
 https://github.com/nakranimeet18/mental-health-prediction
 
 ### website link
-https://mental-health-prediction-p1nh.onrender.com
+https://mental-health-prediction-lu52.onrender.com
 
 ### 📧 Email
 
